@@ -1,0 +1,94 @@
+<ion-view title="{{order.retailerName}}">
+  <ion-content class="has-header">
+    
+	<div class="list card">
+
+	  <div class="item item-avatar">
+	  	<img class="full-image" src="{{order.receeImages || 'img/avatar.png'}}">
+	    <h2>{{order.retailerName}}</h2>
+	    <p>{{order.orderEntryDate}}</p>
+	  </div>
+
+	  <div class="item item-body">
+	    <!--img class="full-image" src="{{order.receeImages || 'img/no_image.png'}}">
+	    <p>
+	      <!-- This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	      the content is from a card-body consisting of an image and paragraph text. The footer
+	      consists of tabs, icons aligned left, within the card-footer. -->
+	    </p>
+	    <p>
+	      <!--<a href="#" class="subdued">1 Like</a>
+	      <a href="#" class="subdued">5 Comments</a>-->
+	    </p>
+	  </div>
+
+	  <!--Recee Imaage Gallery-->
+	  <div class="item item-body imglist-head">
+	  	Recee Images	  	
+	    <a href="#/app/receeimage-upload"><i class="icon ion-android-camera pull-right" ng-show="!(order.status=='Approved') && !(currentUserProperty.role == 'client')"></i></a>
+	  </div>
+	  <div class="item" ng-show="order.recee.length > 0">
+		  	<div ng-repeat="i in order.recee">
+			    <img class="add-thumbnail item1" style="margin:5px 5px 5px 5px;" src="{{i.receeImages}}" ng-click="showInModal(i.receeImages,i.receeheight,i.receewidth,i.receemedianame)">
+			</div>
+	  </div>
+
+
+	  <!--Installation Imaage Gallery-->
+	  <div class="item item-body imglist-head" ng-show="order.status=='Approved' && !(currentUserProperty.role == 'client')">
+	  	Installation Images
+	  	<a href="#/app/installimage-upload"><i class="icon ion-android-camera pull-right" ng-show="!(order.status=='Approved') && !(currentUserProperty.role == 'client')"></i></a>
+	  </div>
+	  <div class="item item-body" ng-show="order.install.length > 0 && order.status=='Approved' && !(currentUserProperty.role == 'client')">
+		  	<div ng-repeat="i in order.install">
+			    <img class="add-thumbnail item1" style="margin:5px 5px 5px 5px;" src="{{i.installImages}}" ng-click="showInModal(i.installImages,i.installheight,i.installwidth,i.installmedianame)">
+			</div>
+	  </div>
+		<div class="item item-body" ng-show="order.role='agent'">
+			<label class="item item-input row"><span class="col col-20" style="color:white;">Quantity</span>
+		    	<input type="text" class="col" placeholder="Quantity" ng-model="media.orderQuantity">
+			</label>
+			<label class="item item-input row"><span class="col col-20" style="color:white;">Height  </span>
+				<input type="text" class="col" placeholder="Height" ng-model="media.orderHeight" ng-change="updateArea()">
+			</label>
+			<label class="item item-input row"><span class="col col-20" style="color:white;">Width   </span>
+				<input type="text" class="col" placeholder="Width" ng-model="media.orderWidth" ng-change="updateArea()">
+			</label>
+			<label class="item item-input row"><span class="col col-20" style="color:white;">Area    </span>
+				<input type="text" class="col" placeholder="Area" ng-model="media.orderArea">
+			</label>
+			<label class="item item-input row" style="color:#ddd;">Media Type
+				<div class="log-mode">
+					<select class="log-select" ng-model="media.mediaType" ng-change="getMedia(media.mediaType)" ng-options="l.media_type_id as l.media_type_name for l in order.media" >
+					<option>Select</option>
+			    </select>
+				</div>
+			</label>
+			<label>
+				<button class="button button-full bar-lastmile" ng-click="submitMedia()">Save</button>
+			</label>
+		</div>
+	  <div class="item tabs tabs-secondary tabs-icon-left">
+	    <!--<a class="tab-item" href="#/app/image-upload" ng-show="order.isApproved && !(currentUserProperty.role == 'client')">
+	      <i class="icon ion-android-image"></i>
+	      Image Upload
+	    </a>-->
+	    <a class="tab-item" ng-show="(currentUserProperty.role == 'client') && order.status == 'Reece Done' || order.status == 'Hold'" ng-click="approveOrder()">
+	      <i class="icon ion-checkmark-circled"></i>
+	      Approve
+	    </a>
+	    <a class="tab-item" ng-show="(currentUserProperty.role == 'client') && order.status == 'Reece Done' || order.status == 'Reject'" ng-click="holdOrder()">
+	      <i class="icon ion-information-circled"></i>
+	      Hold
+	    </a>
+	    <a class="tab-item" ng-show="(currentUserProperty.role == 'client') && order.status == 'Reece Done' || order.status == 'Hold'" ng-click="rejectOrder()">
+	      <i class="icon ion-close-circled"></i>
+	      Reject
+	    </a>
+
+	  </div>
+
+	</div>
+
+  </ion-content>
+</ion-view>

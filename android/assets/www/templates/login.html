@@ -1,0 +1,30 @@
+<ion-view hide-back-button="true" class="login-back" title="Lastmile Campaign Tracker">
+  <ion-nav-buttons side="left">
+	<img src="img/logo.png" style="width:35px;height:35px;">
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header">
+    <ion-list>
+      <div class="list login-item">
+		  <label class="item item-input">
+		    <input type="text" placeholder="User Id" ng-model="user.userId">
+		  </label>
+		  <label class="item item-input">
+		    <input type="password" placeholder="Password" ng-model="user.password">
+		  </label>
+		  <label class="item item-input" style="color:#ddd;">Login Type
+		  	<div class="log-mode" ng-init="setLoginType()">
+				<select class="log-select" ng-model="loginType" ng-change="getLogin(loginType)" ng-options="l.id as l.title for l in loginTypes" >
+			    </select>
+			</div>
+		  </label>
+		  <label>
+		    <button class="button button-full bar-lastmile" ng-click="doLogin()">Login</button>
+		  </label>
+		  <label style="color:red;">
+		  	{{errorMsg}}
+		  </label>
+	  </div>	  
+    </ion-list>
+  </ion-content>
+</ion-view>

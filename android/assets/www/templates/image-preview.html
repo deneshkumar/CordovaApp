@@ -1,0 +1,14 @@
+
+ <ion-view class="modal" title="Preview">
+    <ion-header class="bar bar-header bar-dark bar-lastmile">
+      <h1 class="title">Preview</h1>
+      <a class="button button-icon icon ion-close" ng-click="closeModal()"></a>
+    </ion-header>
+    <ion-content has-header="true">  
+    <p>Name: {{currentName}}</p>
+  		<p>Height: {{currentHeight}}</p>	
+  		<p>Width: {{currentWidth}}</p>
+  		<p>Media Type Name: {{currentName}}</p>
+       	<img class="add-thumbnail-preview" ng-src="{{currentImg}}">
+    </ion-content>
+  </ion-view>

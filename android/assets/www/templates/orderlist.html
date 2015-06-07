@@ -1,0 +1,36 @@
+<ion-view title="All Orders">
+  <ion-nav-buttons side="right">
+	<select style="margin-top:5px;" ng-model="filterOption" ng-options="f.id as f.title for f in filterOptions" >
+    </select>
+  </ion-nav-buttons>
+  	
+    			
+
+  <ion-content class="has-header">
+  	<div class="row">
+  		<div class="col">
+  			<label class="">
+	 			<input type="text" placeholder="Search" ng-model="query">
+			</label>
+  		</div>
+  	</div>
+    <ion-list>
+      <ion-item class="item-avatar" ng-repeat="order in orderList | filter:query" href="#/app/orderlist/{{order.id}}">
+      	  
+	      <img class="list-thumbnail" src="{{'img/avatar.png'}}">
+	      <div class="row" style="margin-left:5px;">
+	      	<div class="col">
+	      		<h2>{{order.retailerName}}</h2>
+	      		<p>{{order.status}}</p>	
+	      		<p>{{order.retailer_city}}, <b>{{order.retailer_state}}</b></p>
+	      	</div>
+	      	<div class="col">
+	      		<img ng-show="order.status == 'Approved'" class="dot-img" src="img/green_dot.png">
+	      		<img ng-show="order.status == 'Reece Done'" class="dot-img" src="img/red_dot.png">
+	      		<img ng-show="order.status == 'Hold'" class="dot-img" src="img/yellow_dot.png">
+	      	</div>
+	      </div>         
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

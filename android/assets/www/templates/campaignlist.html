@@ -1,0 +1,16 @@
+<ion-view title="All Campaigns">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item class="item-avatar" ng-repeat="campaign in campaignList" ng-click="openOrderList(campaign)">
+      	
+	      <img class="list-thumbnail" src="img/briefcase.png">
+	      <div class="row" style="margin-left:5px;">
+	      	<div class="col">
+	      		<h2>{{campaign.title}}</h2>
+	      		<p>Add subtitle.</p>	
+	      	</div>
+	      </div>         
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

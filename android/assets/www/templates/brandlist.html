@@ -1,0 +1,16 @@
+<ion-view hide-back-button="{{hideBackBtn}}" title="All Brands">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item class="item-avatar" ng-repeat="brand in brandList" ng-click="openCampaignList(brand)">
+      	
+	      <img class="list-thumbnail" src="img/briefcase.png">
+	      <div class="row" style="margin-left:5px;">
+	      	<div class="col">
+	      		<h2>{{brand.title}}</h2>
+	      		<p>Brand</p>
+	      	</div>
+	      </div>         
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

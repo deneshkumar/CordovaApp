@@ -1,0 +1,17 @@
+<ion-view title="Upload Image">
+  	<ion-nav-buttons >
+	<button class="button icon ion-android-folder lastmile-head-light" style="margin-left:7px;" ng-click="getPhotoFromDevice()"></button>
+	</ion-nav-buttons>        
+	<ion-nav-buttons side="right">
+	<button class="button icon ion-android-camera lastmile-head-light" style="margin-left:3px;" ng-click="getPhotoFromCamera()"></button>
+	</ion-nav-buttons>
+
+	<ion-content class="has-header">
+		<center>
+		    <div class="thumbnail" ng-repeat="currentImage in currentImages" >
+	          <i ng-click="removeImg(currentImage)">X</i>
+	          <img ng-src='{{currentImage}}'/>
+	        </div>
+	    </center>
+	</ion-content>
+</ion-view>

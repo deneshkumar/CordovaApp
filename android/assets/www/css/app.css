@@ -1,0 +1,194 @@
+/* Empty. Add your own CSS if you like */
+ion-view {
+	background-color: #222 !important;
+}
+
+/*ion-item a{
+	background-color: #333 !important;
+	color:#fff !important;
+}*/
+
+
+ion-item a {
+    background: rgb(56, 56, 56) !important;
+    /*background: -webkit-gradient(linear, 0 0, 0 bottom, from(#666), to(#333));
+    background: -moz-linear-gradient(#666, #333);
+    background: linear-gradient(#666, #333);*/
+    color:rgb(149, 149, 149) !important;
+    text-shadow: 0 1px 0 #2f2f2f;
+    padding-right: 15px !important;
+}
+
+h2{
+	color:rgb(200, 200, 200) !important;
+}
+
+p{
+	color:#43cee6 !important;
+}
+
+.item{
+	/*border-color: #222 !important;*/
+	border-top:2px solid rgb(80, 80, 80);
+	border-bottom:2px solid rgb(15, 15, 15);
+	border-left:0px;
+	border-right: 0px;
+	margin-bottom: 1px;
+	background: rgb(56, 56, 56) !important;
+}
+
+.item input{
+	/*color: #43cee6;*/
+	color: #fff;
+}
+
+.list{
+	margin-top: 2px;
+}
+
+.card{
+	margin-top: 12px;
+}
+
+.login-back{
+	/*background-image: url('../img/loginback1.jpg');
+	background-size: 100% 100%;*/
+	background: #CCC;
+	background: -moz-linear-gradient(top, #CCC 0%, #6E756E 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CCC), color-stop(100%,#6E756E));
+	background: -webkit-linear-gradient(top, #CCC 0%,#6E756E 100%);
+	background: -o-linear-gradient(top, #CCC 0%,#6E756E 100%);
+	background: -ms-linear-gradient(top, #CCC 0%,#6E756E 100%);
+	background: linear-gradient(to bottom, #CCC 0%,#6E756E 100%);
+}
+
+.login-item{
+	margin: 100px 20px;
+}
+
+.tab-item{
+	color:#fff;
+}
+
+.item-divider{
+	background: #222 !important;
+	color:#fff;
+	border-bottom:1px solid rgb(80, 80, 80);
+	border-top:1px solid rgb(15, 15, 15);
+	text-align: center;
+}
+
+    
+.thumbnail{
+	width: 100px;
+	height: 100px;
+	/*box-shadow: 5px 5px 10px #666;*/
+	border-radius: 10px;
+	padding:3px;
+	background: #FFF;
+	position: relative;
+	margin: 10px;
+	display: inline-block;
+	border:2px solid #888;
+}
+
+.thumbnail i{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #D6CEC9;
+	border:2px solid #888;
+	position: absolute;
+	top:-10px;
+	left:80px;
+	text-align: center;
+	font-weight: bolder;
+	padding: 2px;
+	color: #666;
+	z-index: 99;
+	/*box-shadow: 5px 5px 10px #666;*/
+}
+
+.thumbnail img{
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+}
+
+.add-thumbnail{
+	width: 110px;
+	height:110px;
+	padding:0 2px 0 2px;
+}
+
+.add-thumbnail-preview{
+	width:100%;
+	margin-top:45px;
+}
+
+.list-thumbnail{
+	max-width: 62px !important;
+	max-height: 62px !important;
+}
+
+.item-toggle{
+	border: transparent;
+	height: 40px;
+}
+
+.dot-img{
+	width:15px;
+	float:right;
+	margin-top: 12px;
+}
+
+.bar-lastmile{
+	background: rgb(37, 63, 92) !important;
+	color: #fff !important;
+}
+
+.bar-lastmile select{
+	background: rgb(63, 104, 150) !important;
+	border: 1px solid rgb(63, 104, 150) !important;
+	color: #fff !important;
+	padding: 5px 0 5px 3px !important;
+	border-radius:7px;
+}
+
+.lastmile-head-light{
+	background: rgb(63, 104, 150) !important;
+	border: 1px solid rgb(63, 104, 150) !important;
+}
+
+.imglist-head{
+	height: 35px !important;
+	padding: 5px !important;
+	color: #fff !important;
+	text-align: center !important;
+}
+
+.pull-right{
+	float:right;
+}
+
+.pull-left{
+	float:left;
+}
+
+i{
+	color:#fff;
+}
+
+.log-mode{
+	padding-left:20px;
+	padding-right:20px;
+	width:100%;
+}
+
+.log-select{
+	margin-top:5px;
+	background:rgb(37, 63, 92) !important;
+	color:#ddd;
+	width:100%;
+	height:30px;
+}
